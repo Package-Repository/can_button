@@ -45,4 +45,4 @@ when the button is pressed.
 
 ## Authors
 
-[@Slix Elixel](https://github.com/Repo-Factory/) Github
+[@Strix Elixel](https://github.com/Repo-Factory/) Github
