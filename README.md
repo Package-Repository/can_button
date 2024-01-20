@@ -24,7 +24,7 @@ For this program to work, you must have a binary called "robot_exec" that can be
 
 * Use the CMakeLists to build with a command like this 
 
-    mkdir build && cd build && sudo make
+    mkdir build && cd build && cmake .. && sudo make
 
 ### Executing program
 
