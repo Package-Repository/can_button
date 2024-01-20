@@ -14,15 +14,16 @@ In this case, we will be waiting on a CAN Signal. According to the data sheet fo
 
 ## API
 
-For this program to work, you must have a binary called "robot_exec" that can be found by your terminal environment. When the button is pressed, it will fork a process and execute that binary, which would presumably be the robot program
+For this program to work, you must have a binary called "robot_exec" that can be found by your terminal environment. 
+When the button is pressed, it will fork a process and execute a binary of that name, which would presumably be the robot program
 
 ### Dependencies
 
-* Depends on a CAN based embedded system.
+Depends on a CAN based embedded system.
 
 ### Install/Linking
 
-* Use the CMakeLists to build with a command like this 
+Use the CMakeLists to build with a command like this 
 
     mkdir build && cd build && cmake .. && sudo make
 
