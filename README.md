@@ -10,25 +10,11 @@ To do this, we must wait for a signal from the embedded system and fork a proces
 In this case, we will be waiting on a CAN Signal. According to the data sheet for CAN our signals will be 
 
     0x07 - Sub State Device
-    0x04 - Kill Signal
+    0x04 - Start Signal
 
-## Directories ##
+## API
 
-- `can_button/`  
-    - `include/`  
-        - `can_button.h`                 -     
-    - `main/`
-        - `main.cpp`                     - loop will wait 
-    - `src/`  
-        - `can_button.cpp`               - 
-    - `CMakeLists.txt`                   -
-    - `config.json`                      - 
-
-
-## Getting Started
-
-The config.json file serves as the API for this program which simply takes a path to the program you would like to start
-when the button is pressed.
+For this program to work, you must have a binary called "robot_exec" that can be found by your terminal environment. When the button is pressed, it will fork a process and execute that binary, which would presumably be the robot program
 
 ### Dependencies
 
@@ -36,13 +22,14 @@ when the button is pressed.
 
 ### Install/Linking
 
-* 
+* Use the CMakeLists to build with a command like this 
+
+    mkdir build && cd build && sudo make
 
 ### Executing program
 
-
-
+Execute the binary that is built using ./can_button_exec
 
 ## Authors
 
-[@Strix Elixel](https://github.com/Repo-Factory/) Github
+[@Zix](https://github.com/Repo-Factory/) Github

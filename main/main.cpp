@@ -9,7 +9,7 @@
 #define READ_BYTES_ERROR(bytes) bytes<0
 #define FIRST_BYTE(frame_data) frame_data[0]
 
-constexpr const char* ROBOT_PROGRAM             =  "/";
+constexpr const char* ROBOT_PROGRAM             =  "robot_exec";
 constexpr const char* READ_ERROR_MESSAGE        =  "Error when reading bytes";
 constexpr const char* ROBOT_STARTING_MESSAGE    =  "Button press signal received! Starting robot...\n";
 constexpr const int   SUB_STATE_SIGNAL_ID       =   0x07;    
@@ -25,7 +25,7 @@ bool received_start_command(CAN_Setup_Info& setup_info)
 int main(int argc, char * argv[])
 {
     CAN_Setup_Info setup_info = setupCan();
-    while (true) 
+    for (;;) 
     {
         if (READ_BYTES_ERROR(read(setup_info.socket, &setup_info.frame, sizeof(struct can_frame)))) {
             perror(READ_ERROR_MESSAGE);
