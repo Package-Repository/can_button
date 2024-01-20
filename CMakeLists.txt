@@ -3,7 +3,10 @@ project(can_button)
 
 get_filename_component(SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}" DIRECTORY)
 
-file(GLOB SOURCES src/*.cpp)
+file(GLOB SOURCES 
+    src/can_button.cpp
+    src/fork_program.cpp
+)
 include_directories(include)
 
 add_library(
