@@ -7,10 +7,10 @@
 #define IS_PARENT_PROGRAM(pid)  pid>0
 #define FORK_FAILED_MESSAGE "Fork Failed!"
 
-void startTargetProgram(const char* programPath) {    
+void startTargetProgram(const char* pythonPath, const char* programPath) {    
     pid_t pid = fork();
     if (IS_CHILD_PROGRAM(pid)) {
-        execl(programPath, programPath, nullptr);
+        execl(pythonPath, programPath, nullptr);
         exit(EXIT_FAILURE);
     } else if (IS_PARENT_PROGRAM(pid)) {
         int status;
