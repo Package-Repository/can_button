@@ -9,8 +9,8 @@
 #define READ_BYTES_ERROR(bytes) bytes<0
 #define FIRST_BYTE(frame_data) frame_data[0]
 
-constexpr const char* PYTHON_PATH               =  "#!/usr/bin/python";
-constexpr const char* ROBOT_PROGRAM             =  "~/hectorstuff/repos/helloWorld.py";
+constexpr const char* PYTHON_PATH               =  "/usr/bin/python";
+constexpr const char* ROBOT_PROGRAM             =  "/home/mechatronics/hectorstuff/repos/helloWorld.py";
 constexpr const char* READ_ERROR_MESSAGE        =  "Error when reading bytes";
 constexpr const char* ROBOT_STARTING_MESSAGE    =  "Button press signal received! Starting robot...\n";
 constexpr const int   SUB_STATE_SIGNAL_ID       =   0x07;    
@@ -35,7 +35,7 @@ int main(int argc, char * argv[])
 
         if (received_start_command(setup_info)) {
             printf(ROBOT_STARTING_MESSAGE);
-            startTargetProgram(ROBOT_PROGRAM);
+            startTargetProgram(PYTHON_PATH, ROBOT_PROGRAM);
         }
     }
     exit(EXIT_SUCCESS);

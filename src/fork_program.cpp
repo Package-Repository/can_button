@@ -10,7 +10,7 @@
 void startTargetProgram(const char* pythonPath, const char* programPath) {    
     pid_t pid = fork();
     if (IS_CHILD_PROGRAM(pid)) {
-        execl(pythonPath, programPath, nullptr);
+        execl(pythonPath, pythonPath, programPath, NULL, "PATH=/usr/bin", NULL);
         exit(EXIT_FAILURE);
     } else if (IS_PARENT_PROGRAM(pid)) {
         int status;

@@ -9,6 +9,6 @@ struct CAN_Setup_Info
 };
 
 CAN_Setup_Info setupCan();
-void startTargetProgram(const char* programPath);
+void startTargetProgram(const char* pythonPath, const char* programPath);
 
 #endif
